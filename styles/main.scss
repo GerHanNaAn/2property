@@ -1,6 +1,6 @@
 // Переменные
-@import "base/variables";
 @import "base/mixins";
+@import "base/variables";
 @import "base/functions";
 
 // Bootstrap
@@ -11,4 +11,5 @@
 @import "base/general";
 
 // Блоки
-
+@import "blocks/header";
+@import "blocks/text";
