@@ -1,0 +1,101 @@
+// оболочка для секций страницы
+.container {
+  max-width: 1140px; //использовать миксины медиазапросв тут вдальнейшем?
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.icon-svg {
+  height: 24px;
+  width: 24px;
+}
+.navbar {
+  margin: 0;
+  &__item {
+    display: inline;
+    margin-left: 10px;
+  }
+  &__link {
+    color: $primary-muted;
+    &:hover {
+      color: $bg-secondary;
+    }
+  }
+}
+.dropdown-menu {
+  display: none;
+}
+.logo {
+  &__svg {
+    width: inherit;
+    height: inherit;
+  }
+}
+.soc {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    margin-right: 30px;
+  }
+  &__logo {
+    height: 20px;
+  }
+}
+.text {
+  color: $primary-muted;
+  margin: 0;
+  line-height: 27px;
+}
+.menu {
+  &__list {
+  }
+  &__item {
+  }
+  &__link {
+    line-height: 35px;
+    font-weight: 200;
+    color: $light-muted;
+    &:hover {
+      color: $light;
+    }
+  }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  &__item-2 {
+    flex: 1 0 50%;
+  }
+  &__item-3 {
+    flex: 1 0 33.333333%;
+  }
+  &__item-4 {
+    flex: 1 0 25%;
+  }
+  //justify-content
+  &__start {
+    justify-content: flex-end;
+  }
+  &__center {
+    justify-content: center;
+  }
+  &__spbw {
+    justify-content: space-between;
+  }
+  &__spad {
+    justify-content: space-around;
+  }
+}
+
+.card {
+  &__title {
+    display: block;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    color: $light;
+    letter-spacing: 0.1em;
+  }
+  &__body {
+  }
+}

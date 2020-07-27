@@ -1,0 +1,18 @@
+.footer {
+  background: $bg-primary;
+  padding: 100px 0;
+  &__subtitle {
+    &::before {
+      content: "";
+      background: #fff;
+      width: 40px;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  &__item {
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+}

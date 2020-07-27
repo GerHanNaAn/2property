@@ -3,13 +3,14 @@
 @import "base/variables";
 @import "base/functions";
 
-// Bootstrap
-@import "vendor/bootstrap/bootstrap";
+// Шрифты
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500");
 
 // Наш код
 @import "base/fonts";
 @import "base/general";
 
 // Блоки
+@import "blocks/common";
 @import "blocks/header";
-@import "blocks/text";
+@import "blocks/footer";
