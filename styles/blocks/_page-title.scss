@@ -1,0 +1,23 @@
+.page-title {
+  position: relative;
+  background: url(../../../img/hero_bg_2.jpg);
+  z-index: 0;
+  &__conatiner {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      height: inherit;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

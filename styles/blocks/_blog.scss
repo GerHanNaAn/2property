@@ -1,0 +1,10 @@
+.blog {
+  background: $bg-primary-muted;
+  padding-bottom: 30px;
+  &__card {
+    margin: 40px 20px 0;
+  }
+  &__pagination {
+    margin: 50px auto 30px;
+  }
+}

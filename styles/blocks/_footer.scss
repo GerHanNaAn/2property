@@ -2,6 +2,8 @@
   background: $bg-primary;
   padding: 100px 0;
   &__subtitle {
+    position: relative;
+    letter-spacing: 2.6px;
     &::before {
       content: "";
       background: #fff;

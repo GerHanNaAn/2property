@@ -1,6 +1,6 @@
 // оболочка для секций страницы
 .container {
-  max-width: 1140px; //использовать миксины медиазапросв тут вдальнейшем?
+  max-width: 1140px; /*использовать миксины медиазапросв тут вдальнейшем?*/
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -15,6 +15,7 @@
     margin-left: 10px;
   }
   &__link {
+    letter-spacing: 1px;
     color: $primary-muted;
     &:hover {
       color: $bg-secondary;
@@ -41,10 +42,18 @@
     height: 20px;
   }
 }
+.title {
+  font-size: 40px;
+  color: $light;
+  margin: 0;
+}
 .text {
   color: $primary-muted;
   margin: 0;
   line-height: 27px;
+  &_little {
+    font-size: 12px;
+  }
 }
 .menu {
   &__list {
@@ -65,12 +74,15 @@
   flex-wrap: wrap;
   &__item-2 {
     flex: 1 0 50%;
+    box-sizing: border-box;
   }
   &__item-3 {
-    flex: 1 0 33.333333%;
+    flex: 0 0 33.333333%;
+    box-sizing: border-box;
   }
   &__item-4 {
     flex: 1 0 25%;
+    box-sizing: border-box;
   }
   //justify-content
   &__start {
@@ -86,16 +98,89 @@
     justify-content: space-around;
   }
 }
-
 .card {
+  box-sizing: border-box;
+  background: $light;
   &__title {
     display: block;
     padding-bottom: 15px;
-    margin-bottom: 20px;
-    position: relative;
+    margin-bottom: 15px;
     color: $light;
-    letter-spacing: 0.1em;
+    &_normal {
+      margin-bottom: 0;
+      color: $bg-secondary;
+      font-size: 20px;
+    }
   }
   &__body {
+    padding: 20px 20px 40px;
+    &_little {
+      padding: 0;
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &_transparent {
+    background: transparent;
+  }
+}
+.link {
+  color: $bg-secondary;
+  &:hover {
+    color: $bg-secondary-muted;
+  }
+}
+.btn {
+  // padding: 10px;
+  display: inline-block;
+  background: $light;
+  border: solid 1px $dingy;
+  margin: 5px;
+  text-align: center;
+  &_secondary {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+.pagination {
+  display: inline-flex;
+  align-items: center;
+  &__item {
+    width: 50px;
+    line-height: 50px;
+    border: 1px solid $dingy;
+    border-radius: 50%;
+    background: $light;
+    text-align: center;
+    margin: 0 10px;
+    &_active {
+      border: 1px solid transparent;
+      background: #f89d13;
+      color: #fff;
+    }
+    &:hover {
+      box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid $focus;
+    }
+  }
+}
+.breadcrumb {
+  display: flex;
+  &__separator {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background: $light;
+    margin: auto 0;
+  }
+  &__item {
+    margin: 10px;
+    &_active {
+      font-weight: 700;
+      color: $light;
+    }
   }
 }
