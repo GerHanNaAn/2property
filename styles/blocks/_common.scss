@@ -42,17 +42,55 @@
     height: 20px;
   }
 }
+.link {
+  color: $bg-secondary;
+  &:hover {
+    color: $bg-secondary-muted;
+  }
+}
 .title {
   font-size: 40px;
   color: $light;
   margin: 0;
+  text-align: center;
+  &_primary {
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+  }
 }
 .text {
   color: $primary-muted;
   margin: 0;
   line-height: 27px;
+  //// А нужно ли столько стилей для text?
+  &_weight {
+    &_bold {
+      font-weight: 900;
+    }
+  }
+  &_color {
+    &_light {
+      color: $light;
+    }
+  }
+  &_wide {
+    letter-spacing: 1.5px;
+  }
   &_little {
     font-size: 12px;
+  }
+  &_big {
+    font-weight: 300;
+    font-size: 20px;
+  }
+  &_secondary {
+    font-size: 15px;
+    color: $tx_secondary;
+  }
+  &_bright {
+    color: $secondary;
+    font-weight: 700;
   }
 }
 .menu {
@@ -68,6 +106,12 @@
       color: $light;
     }
   }
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 .row {
   display: flex;
@@ -120,29 +164,10 @@
   }
   &__img {
     max-width: 100%;
+    display: block;
   }
   &_transparent {
     background: transparent;
-  }
-}
-.link {
-  color: $bg-secondary;
-  &:hover {
-    color: $bg-secondary-muted;
-  }
-}
-.btn {
-  // padding: 10px;
-  display: inline-block;
-  background: $light;
-  border: solid 1px $dingy;
-  margin: 5px;
-  text-align: center;
-  &_secondary {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
   }
 }
 .pagination {
@@ -156,6 +181,7 @@
     background: $light;
     text-align: center;
     margin: 0 10px;
+    color: $primary;
     &_active {
       border: 1px solid transparent;
       background: #f89d13;
@@ -182,5 +208,101 @@
       font-weight: 700;
       color: $light;
     }
+  }
+}
+.slider {
+  position: relative;
+  &__img {
+    width: 100%;
+  }
+  &__item {
+    margin-bottom: 16px;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 50%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: $light;
+  }
+}
+
+.product {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: 200px;
+  &:hover &__inner {
+    bottom: 0;
+  }
+  &__inner {
+    width: 100%;
+    z-index: 1;
+    transition-timing-function: ease-in, ease, linear;
+    transition: 0.5s;
+    position: absolute;
+    bottom: -60px;
+    &::before {
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 18%,
+        rgba(0, 0, 0, 0.8) 99%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0px;
+      right: 0;
+      bottom: 0px;
+      left: 0;
+    }
+  }
+  &__top {
+    padding: 20px 15px;
+  }
+  &__link {
+  }
+  &__price {
+    border-radius: 4px;
+    background: #f89d13;
+    color: #fff;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  &__title {
+    margin: 0;
+    color: $light;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  &__info {
+    font-size: 15px;
+    color: $dingy;
+  }
+}
+.more-info {
+  width: 100%;
+  z-index: 4;
+  background: $bg-secondary;
+  padding: 10px 0;
+  color: $light;
+  font-size: 12px;
+  font-weight: 700;
+  &__inner {
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  &__title {
+    color: $primary-muted;
+    display: block;
+    padding-bottom: 5px;
+  }
+  &__text {
   }
 }

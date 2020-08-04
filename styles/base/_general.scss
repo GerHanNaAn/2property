@@ -1,10 +1,19 @@
+*::selection {
+  color: $light;
+  background: $primary;
+  box-sizing: border-box;
+}
 body {
   font-family: "Nunito Sans", sans-serif;
   margin: 0;
+  // background: rebeccapurple;
 }
 a {
   transition: 0.3s all ease;
   text-decoration: none;
+  &:active {
+    color: inherit;
+  }
 }
 li {
   list-style-type: none;
