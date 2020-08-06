@@ -1,0 +1,12 @@
+.contacts-page {
+  padding-top: 50px;
+  &__item {
+    flex-basis: 65%;
+    max-width: 65%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  &__contacts {
+    padding: 20px;
+  }
+}

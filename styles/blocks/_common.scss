@@ -59,6 +59,16 @@
     letter-spacing: 0.1em;
   }
 }
+.subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  &_big {
+    font-size: 24px;
+  }
+  &_bold {
+    font-weight: 700;
+  }
+}
 .text {
   color: $primary-muted;
   margin: 0;
@@ -304,5 +314,88 @@
     padding-bottom: 5px;
   }
   &__text {
+  }
+}
+.form {
+  padding: 30px 20px;
+  border: 1px solid $dingy;
+  &__inner {
+  }
+  &__item {
+    padding: 10px 0;
+    color: $primary-muted;
+  }
+  &__subtitle {
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  &__text {
+  }
+  &__message {
+  }
+  &__textarea {
+    resize: vertical;
+  }
+  &__submit {
+  }
+  &__element {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-family: "Nunito Sans", sans-serif;
+    &:focus,
+    &:active {
+      outline: none;
+      border: $bg-secondary solid 1px;
+    }
+  }
+}
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+  background: $bg-secondary;
+  color: $light;
+  transition-timing-function: ease-in, ease, linear;
+  transition: 0.5s;
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+    background: $bg-secondary-muted;
+    cursor: pointer;
+  }
+}
+.contacts {
+  padding: 40px 10px;
+  &__item {
+    padding-bottom: 15px;
+  }
+}
+.user {
+  border: $dingy solid 1px;
+  background: $bg-primary-muted;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  min-width: 200px;
+  &__inner {
+  }
+  &__name {
+    color: $secondary;
+    font-weight: 700;
+  }
+  &__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+}
+.list {
+  &__item {
   }
 }
