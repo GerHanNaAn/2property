@@ -16,5 +16,9 @@
   &__item {
     padding: 0 10px;
     box-sizing: border-box;
+    @media (max-width: 991px) {
+      flex: 1 0 100%;
+      margin-bottom: 40px;
+    }
   }
 }

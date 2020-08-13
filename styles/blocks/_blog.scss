@@ -4,6 +4,14 @@
   &__card {
     margin: 40px 20px 0;
   }
+  &__item {
+    @media (max-width: 991px) {
+      flex: 0 0 50%;
+    }
+    @media (max-width: 767px) {
+      flex: 1 0 100%;
+    }
+  }
   &__pagination {
     margin: 50px auto 30px;
   }

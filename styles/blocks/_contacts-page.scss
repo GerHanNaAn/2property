@@ -9,4 +9,10 @@
   &__contacts {
     padding: 20px;
   }
+  &__col {
+    @media (max-width: 991px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
 }

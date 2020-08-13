@@ -3,6 +3,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 991px) {
+      margin: 0 auto;
+      max-width: 720px;
+    }
   }
   &__contacts {
     display: flex;
@@ -44,5 +48,23 @@
   &__burger-svg {
     width: 30px;
     height: 30px;
+    &:hover {
+      cursor: pointer;
+    }
+    @media (min-width: 991px) {
+      display: none;
+    }
+  }
+  &__mobile-menu,
+  &__backg {
+    // test
+    visibility: visible;
+    opacity: 0.5;
+    transition: 0.3s;
+    // test
+    display: none;
+  }
+  .header__burger-svg:hover .col > .header__backg {
+    display: flex;
   }
 }

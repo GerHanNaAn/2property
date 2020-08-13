@@ -2,7 +2,13 @@
 .container {
   max-width: 1140px; /*использовать миксины медиазапросв тут вдальнейшем?*/
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
+  @media (max-width: 991px) {
+    max-width: 720px;
+  }
+  @media (max-width: 767px) {
+    max-width: 540px;
+  }
 }
 .icon-svg {
   height: 16px;
@@ -52,6 +58,9 @@
     font-weight: 700;
     font-size: 2rem;
     letter-spacing: 0.1em;
+    @media (max-width: 576px) {
+      font-size: 22px;
+    }
   }
 }
 .subtitle {
@@ -59,6 +68,9 @@
   font-weight: 500;
   &_big {
     font-size: 24px;
+    @media (max-width: 576px) {
+      margin: 7px 0;
+    }
   }
   &_bold {
     font-weight: 700;
@@ -169,6 +181,21 @@
     display: block;
   }
 }
+.backg {
+  &::before {
+    content: "";
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s all ease-in-out;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    z-index: 49;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
 .mobile-menu {
   z-index: 50;
   position: fixed;
@@ -176,40 +203,29 @@
   right: 0;
   padding: 20px;
   background: $bg-primary-muted;
-  background: green;
   height: 100%;
   width: 300px;
   box-sizing: border-box;
-  & * {
-    // z-index: 50;
-  }
-  &::before {
-    content: "";
-    opacity: 0.3;
-    font-size: 200px;
-    visibility: visible;
-    // transition: 0.3s all ease-in-out;
-    background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    z-index: -49;
-    border: 1px solid red;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
   &__inner {
   }
   &__item {
   }
   &__cross-svg {
+    margin-bottom: 20px;
+    position: relative;
+    left: 220px;
     fill: $primary-muted;
     width: 30px;
     height: 30px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__link {
     padding: 10px;
     display: block;
+    font-size: 20px;
+    line-height: 34px;
   }
 }
 .m-sub-menu {
@@ -284,6 +300,10 @@
 .pagination {
   display: inline-flex;
   align-items: center;
+  @media (max-width: 576px) {
+    display: block;
+    text-align: center;
+  }
   &__item {
     width: 50px;
     line-height: 50px;
@@ -293,6 +313,10 @@
     text-align: center;
     margin: 0 10px;
     color: $primary;
+    @media (max-width: 576px) {
+      display: inline-block;
+      margin: 5px 0;
+    }
     &_active {
       border: 1px solid transparent;
       background: $bg-secondary;
@@ -497,6 +521,14 @@
   }
 }
 .list {
+  width: 100%;
   &__item {
+    margin-bottom: 7px;
+  }
+  &__text {
+    display: inline-block;
+    @media (max-width: 576px) {
+      width: 60%;
+    }
   }
 }
