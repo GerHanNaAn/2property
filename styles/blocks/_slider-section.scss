@@ -1,2 +1,55 @@
 .slider-section {
+  &__item {
+    min-height: 600px;
+    height: calc(100vh - 134px);
+    background-position: center;
+    background-size: cover;
+  }
+  .owl {
+    &-nav {
+      position: absolute !important;
+      top: 50% !important;
+      width: 100%;
+    }
+    &-next {
+      color: #fff;
+      position: absolute !important;
+      height: 50px;
+      width: 50px;
+      background: rgba(0, 0, 0, 0.2) !important;
+      right: 20px;
+      transition: 0.3s;
+      &:hover {
+        background: $primary !important;
+      }
+      &:focus {
+        outline: none;
+      }
+      span {
+        color: #fff;
+        font-size: 50px;
+        line-height: 40px;
+      }
+    }
+    &-prev {
+      color: #fff;
+      position: absolute !important;
+      height: 50px;
+      width: 50px;
+      background: rgba(0, 0, 0, 0.2) !important;
+      left: 20px;
+      transition: 0.3s;
+      &:hover {
+        background: $primary !important;
+      }
+      &:focus {
+        outline: none;
+      }
+      span {
+        color: #fff;
+        font-size: 50px;
+        line-height: 40px;
+      }
+    }
+  }
 }

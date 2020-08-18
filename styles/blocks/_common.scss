@@ -1,6 +1,5 @@
-// оболочка для секций страницы
 .container {
-  max-width: 1140px; /*использовать миксины медиазапросв тут вдальнейшем?*/
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 15px;
   @media (max-width: 991px) {
@@ -36,8 +35,8 @@
   &__list {
     display: flex;
   }
-  &__item {
-    margin-right: 30px;
+  &__item:not(:first-child) {
+    margin-left: 30px;
   }
   &__logo {
     height: 20px;
@@ -80,7 +79,6 @@
   color: $primary-muted;
   margin: 0;
   line-height: 27px;
-  //// А нужно ли столько стилей для text?
   &_weight {
     &_bold {
       font-weight: 900;
@@ -159,7 +157,7 @@
   }
 }
 .dropdown-menu {
-  z-index: 1;
+  z-index: 5;
   box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.25);
   border: 1px solid $dingy;
   border-top: 4px solid $bg-secondary;
@@ -182,30 +180,39 @@
   }
 }
 .backg {
-  &::before {
-    content: "";
-    opacity: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all ease-in-out;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 49;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+  &_active {
     visibility: visible;
-    transition: 0.3s all ease-in-out;
-    background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    z-index: 49;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    opacity: 1;
   }
 }
 .mobile-menu {
   z-index: 50;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 100%;
   padding: 20px;
   background: $bg-primary-muted;
   height: 100%;
   width: 300px;
   box-sizing: border-box;
+  transition: 0.3s;
+  overflow: auto;
+  scrollbar-width: none;
+  & ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
   &__inner {
   }
   &__item {
@@ -227,13 +234,15 @@
     font-size: 20px;
     line-height: 34px;
   }
+  &_active {
+    transform: translateX(-100%);
+  }
 }
 .m-sub-menu {
   display: none;
   &__item {
   }
 }
-//
 .col {
   display: flex;
   flex-direction: column;
@@ -254,19 +263,6 @@
   &__item-4 {
     flex: 1 0 25%;
     box-sizing: border-box;
-  }
-  //justify-content
-  &__start {
-    justify-content: flex-end;
-  }
-  &__center {
-    justify-content: center;
-  }
-  &__spbw {
-    justify-content: space-between;
-  }
-  &__spad {
-    justify-content: space-around;
   }
 }
 .card {
@@ -346,10 +342,6 @@
   }
 }
 .slider {
-  position: relative;
-  &__img {
-    width: 100%;
-  }
   &__item {
     margin-bottom: 16px;
   }
@@ -531,4 +523,10 @@
       width: 60%;
     }
   }
+}
+.hideScrl {
+  margin-right: 17px;
+}
+.lock {
+  overflow: hidden;
 }

@@ -55,16 +55,9 @@
       display: none;
     }
   }
-  &__mobile-menu,
-  &__backg {
-    // test
-    visibility: visible;
-    opacity: 0.5;
-    transition: 0.3s;
-    // test
-    display: none;
-  }
-  .header__burger-svg:hover .col > .header__backg {
-    display: flex;
+  scrollbar-width: none;
+  & ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
   }
 }
